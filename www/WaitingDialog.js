@@ -1,5 +1,5 @@
 var WaitingDialog = {
-    show: function(successCallback, errorCallback) {
+    show: function(text) {
         cordova.exec (
             null,
             null,
@@ -8,7 +8,7 @@ var WaitingDialog = {
             [text]
         );
     },
-    hide: function(successCallback, errorCallback) {
+    hide: function() {
         cordova.exec (
             null,
             null,
