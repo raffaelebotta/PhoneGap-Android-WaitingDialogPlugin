@@ -4,7 +4,7 @@ var WaitingDialog = {
             null,
             null,
             'WaitingDialog',
-            'show'',
+            'show',
             [text]
         );
     },
