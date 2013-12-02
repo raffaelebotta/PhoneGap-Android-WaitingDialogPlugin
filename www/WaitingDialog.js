@@ -1,25 +1,22 @@
-// window.plugins.waitingDialog
-
-function WaitingDialog() {
+var WaitingDialog = {
+    show: function(successCallback, errorCallback) {
+        cordova.exec (
+            null,
+            null,
+            'WaitingDialog',
+            'show'',
+            [text]
+        );
+    },
+    hide: function(successCallback, errorCallback) {
+        cordova.exec (
+            null,
+            null,
+            'WaitingDialog',
+            'hide',
+            []
+        );
+    }    
 }
 
-WaitingDialog.prototype.show = function(text) {
-        cordova.exec(null, null, "WaitingDialog", "show", [text]);
-}
-
-WaitingDialog.prototype.hide = function() {
-        cordova.exec(null, null, "WaitingDialog", "hide", []);
-}
-
-cordova.addConstructor(function() {
-        if(!window.plugins) {
-         window.plugins = {};
-        }
-
-   // shim to work in 1.5 and 1.6
-   if (!window.Cordova) {
-         window.Cordova = cordova;
-   };
-
-   window.plugins.waitingDialog = new WaitingDialog();
-});
+module.exports = WaitingDialog;
